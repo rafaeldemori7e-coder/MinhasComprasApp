@@ -6,11 +6,7 @@ namespace MauiAppMinhasCompras
     {
         static SQLiteDatabaseHelper _db;
 
-        public App()
-        {
-            InitializeComponent();
-            MainPage = new NavigationPage(new Views.ListaProduto());
-        }
+        
 
         public static SQLiteDatabaseHelper Db
         {
@@ -27,6 +23,14 @@ namespace MauiAppMinhasCompras
 
                 return _db;
             }
+        }
+        public App()
+        {
+            InitializeComponent();
+
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("pt-BR");
+
+            MainPage = new NavigationPage(new Views.ListaProduto());
         }
     }
 }
